@@ -85,7 +85,10 @@ export default function Contact() {
           </CardInfo>
         </ContactCard>
 
-        <ContactCard as="a" href="/resume.pdf" download="HyunjeongSeo_Resume.pdf">
+        <ContactCard as="a" href="/HyunjeongSeo_Resume2026(FrontendDev).pdf" 
+            download="HyunjeongSeo_Resume2026.pdf"
+            target="_blank" 
+            rel="noopener noreferrer">
           <IconWrapper>
             <FontAwesomeIcon icon={faFileArrowDown} size="lg" />
           </IconWrapper>

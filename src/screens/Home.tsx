@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <HomeWrapper>
       <HeroSection>
-        <Greeting>Hi, I'm Hyunjeong Seo 😆</Greeting>
+        <Greeting>Hi, I'm Hyunjeong Seo (Angela) 😆</Greeting>
         <JobTitle>Frontend Software Developer</JobTitle>
         <BioText>
           Front-End Developer with 3 years of professional experience, dedicated to building scalable web applications and exploring modern technologies. A collaborative team player who values active communication, clean code, and continuous learning.  
@@ -46,6 +46,7 @@ export default function Home() {
             <span>jQuery</span>
             <span>MSSQL</span>
             <span>Eclipse</span>
+            <span>Cursor</span>
           </TechTags>
 
           <MoreLink to="/projects?year=2023 - 2026">
@@ -64,8 +65,9 @@ export default function Home() {
 
           <TechTags>
             <span>Python</span>
-            <span>PyQt5</span>
             <span>OpenCV</span>
+            <span>PyQt5</span>
+            <span>QtDesigner</span>
             <span>MariaDB</span>
             <span>AI / R&D</span>
           </TechTags>
