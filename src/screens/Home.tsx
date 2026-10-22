@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faBriefcase, faCode } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
+
   return (
     <HomeWrapper>
       <HeroSection>
@@ -47,7 +48,7 @@ export default function Home() {
             <span>Eclipse</span>
           </TechTags>
 
-          <MoreLink to="/projects">
+          <MoreLink to="/projects?year=2023 - 2026">
             View detailed project experience <FontAwesomeIcon icon={faArrowRight} size="xs" />
           </MoreLink>
         </ExperienceCard>
@@ -68,7 +69,7 @@ export default function Home() {
             <span>MariaDB</span>
             <span>AI / R&D</span>
           </TechTags>
-          <MoreLink to="/projects">
+          <MoreLink to="/projects?year=2021">
             View detailed project experience <FontAwesomeIcon icon={faArrowRight} size="xs" />
           </MoreLink>
         </ExperienceCard>
@@ -80,16 +81,16 @@ export default function Home() {
         </SectionTitle>
         <SkillGrid>
           <SkillCategory>
-            <h4>Languages & Core</h4>
-            <p>JavaScript (ES6+), HTML5, CSS3, jQuery</p>
+            <h4>Languages & Frontend</h4>
+            <p>JavaScript (ES6+), TypeScript, React, HTML5, CSS3, jQuery, Styled-Components</p>
           </SkillCategory>
           <SkillCategory>
-            <h4>Frameworks & Tools</h4>
-            <p>React, TypeScript, Styled-Components, Vite, Git</p>
+            <h4>Backend & Databases</h4>
+            <p>Node.js, MSSQL, RESTful APIs</p>
           </SkillCategory>
           <SkillCategory>
-            <h4>Backend & DB</h4>
-            <p>Node.js, MSSQL, Eclipse, RESTful APIs</p>
+            <h4>Tools & Environment</h4>
+            <p>Git, Vite, Eclipse, VS Code</p>
           </SkillCategory>
         </SkillGrid>
       </SkillsSection>
