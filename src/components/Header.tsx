@@ -1,8 +1,8 @@
-// src/components/Header.tsx
-import { Link } from 'react-router-dom';
-import {styled} from "styled-components";
+import { Link, useLocation } from 'react-router-dom';
+import {styled} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+const mintchoco = new URL('../assets/mintchoco.png', import.meta.url).href;
 
 interface HeaderProps {
   darkMode: boolean;
@@ -10,15 +10,27 @@ interface HeaderProps {
 }
 
 export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <Nav>
-      <Logo to="/">Ang.log</Logo>
+      <Logo to="/">
+        <LogoImage src={mintchoco} alt="Logo" />
+      </Logo>
       <MenuContainer>
         <NavLinks>
-          <Link to="/">home</Link>
-          <Link to="/projects">project</Link>
-          <Link to="/contact">contact</Link>
+          <StyledLink to="/" $isActive={currentPath === '/'}>
+            home
+          </StyledLink>
+          <StyledLink to="/projects" $isActive={currentPath === '/projects'}>
+            project
+          </StyledLink>
+          <StyledLink to="/contact" $isActive={currentPath === '/contact'}>
+            contact
+          </StyledLink>
         </NavLinks>
+
         <ThemeToggleBtn onClick={toggleDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size="lg" />
         </ThemeToggleBtn>
@@ -37,9 +49,14 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: ${(props) => props.theme.accentColor};
+  display: flex;
+  align-items: center;
+`;
+
+const LogoImage = styled.img`
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 `;
 
 const MenuContainer = styled.div`
@@ -52,29 +69,31 @@ const NavLinks = styled.div`
   display: flex;
   gap: 24px;
   font-weight: 500;
+`;
 
-  a {
-    transition: color 0.2s ease;
-    &:hover {
-      color: ${(props) => props.theme.accentColor};
-    }
+const StyledLink = styled(Link)<{ $isActive: boolean }>`
+  transition: color 0.2s ease;
+  color: ${(props) => (props.$isActive ? props.theme.accentColor : 'inherit')};
+  font-weight: ${(props) => (props.$isActive ? '700' : '500')};
+
+  &:hover {
+    color: ${(props) => props.theme.accentColor};
   }
 `;
 
 const ThemeToggleBtn = styled.button`
-  background: ${(props) => props.theme.cardBgColor};
+  background: none;
+  border: none;
+  cursor: pointer;
   color: ${(props) => props.theme.textColor};
-  border: 1px solid ${(props) => props.theme.borderColor};
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  font-size: 1.1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: all 0.2s ease;
+  justify-content: center;
+  padding: 8px;
+  transition: color 0.2s ease;
 
   &:hover {
     color: ${(props) => props.theme.accentColor};
-    border-color: ${(props) => props.theme.accentColor};
   }
 `;

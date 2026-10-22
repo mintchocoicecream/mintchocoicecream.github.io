@@ -1,12 +1,11 @@
-// src/router/Router.tsx
-import { createBrowserRouter } from 'react-router-dom';
-import Layout from '../components/Layout.tsx';
-import Home from '../screens/Home.tsx';
-import Projects from '../screens/Projects.tsx';
-import Contact from '../screens/Contact.tsx';
+import { createHashRouter } from 'react-router-dom';
+import Layout from '../components/Layout.js';
+import Home from '../screens/Home.js';
+import Projects from '../screens/Projects.js';
+import Contact from '../screens/Contact.js';
 
 export const createRouter = (darkMode: boolean, toggleDarkMode: () => void) =>
-  createBrowserRouter([
+  createHashRouter([
     {
       path: '/',
       element: <Layout darkMode={darkMode} toggleDarkMode={toggleDarkMode} />,

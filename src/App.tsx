@@ -1,10 +1,9 @@
-// src/App.tsx
 import { useState } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { darkTheme, lightTheme } from './styles/theme.ts';
-import { createRouter } from './router/Router.tsx';
-import { GlobalStyle } from './styles/GlobalStyle.ts';
+import { lightTheme, darkTheme } from './styles/theme.js';
+import { GlobalStyle } from './styles/GlobalStyle.js';
+import { createRouter } from './router/Router.js';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);

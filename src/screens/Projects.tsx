@@ -5,8 +5,8 @@ export default function Projects() {
     <ProjectsWrapper>
       <Heading>Projects</Heading>
       <ProjectCard>
-        <h3>Crypto Tracker v2</h3>
-        <p>React와 TypeScript를 활용한 실시간 암호화폐 트래킹 웹 애플리케이션</p>
+        <h3>Webcash Link</h3>
+        <p>introduce</p>
       </ProjectCard>
     </ProjectsWrapper>
   );
